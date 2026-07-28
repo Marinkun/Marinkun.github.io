@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+</head>
+<body>
+  <div id="earth-bg"></div>
+  <div id="particles"></div>
+
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">
+        <span class="logo-icon">◆</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </a>
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+          <span class="nav-dot"></span>首页
+        </a>
+        <a href="{{ '/about/' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">
+          <span class="nav-dot"></span>关于我
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© {{ site.time | date: '%Y' }} {{ site.author }} · Powered by Jekyll</p>
+      <div class="footer-links">
+        <a href="https://github.com/Marinkun" target="_blank">GitHub</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="{{ '/assets/js/earth-bg.js' | relative_url }}"></script>
+  {% if page.layout == 'home' %}
+    <script src="{{ '/assets/js/earth-intro.js' | relative_url }}"></script>
+  {% endif %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
