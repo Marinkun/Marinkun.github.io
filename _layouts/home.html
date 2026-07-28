@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div id="earth-intro">
+  <div class="earth-loading-text">定位中 · 河南信阳</div>
+</div>
+
+<div id="page-content" style="position: absolute; width: 100%;">
+  <div class="home">
+    <div class="hero-section">
+      <h1 class="hero-title">Haokun's Blog</h1>
+      <p class="hero-subtitle">分享技术、生活与思考。从 GIS 到前端，从代码到生活，记录成长的每一步。</p>
+    </div>
+
+    {%- if page.title -%}
+      <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+    {%- if site.posts.size > 0 -%}
+      <h2 class="section-title">最新文章</h2>
+      <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            <div class="post-meta">
+              <span class="date-icon"></span>
+              {{ post.date | date: "%Y年%m月%d日" }}
+              {%- if post.categories -%}
+                <span style="margin-left: 10px;">
+                  {%- for category in post.categories -%}
+                    [{{ category }}]
+                  {%- endfor -%}
+                </span>
+              {%- endif -%}
+            </div>
+            <h3>
+              {{ post.title | escape }}
+            </h3>
+            {%- if post.description or post.excerpt -%}
+              <p class="post-excerpt">
+                {{ post.description | default: post.excerpt | strip_html | truncatewords: 50 }}
+              </p>
+            {%- endif -%}
+            {%- if post.tags -%}
+              <div class="post-tags">
+                {%- for tag in post.tags -%}
+                  <span class="post-tag">#{{ tag }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="{{ '/assets/js/earth-animation.js' | relative_url }}"></script>

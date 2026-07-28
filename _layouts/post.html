@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%Y年%m月%d日" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+      {%- if page.categories -%}
+        • 
+        {%- for category in page.categories -%}
+          <span>[{{ category }}]</span>
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if page.tags -%}
+        <br>
+        {%- for tag in page.tags -%}
+          <span class="post-tag" style="display:inline-block;padding:2px 10px;margin-right:5px;font-size:0.8em;color:#00ffff;border:1px solid rgba(0,255,255,0.3);border-radius:12px;background:rgba(0,255,255,0.05);">#{{ tag }}</span>
+        {%- endfor -%}
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
