@@ -1,37 +1,65 @@
-## Welcome to GitHub Pages
+# Haokun's Blog
 
-You can use the [editor on GitHub](https://github.com/Marinkun/haokun.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+这是我的个人博客，使用 GitHub Pages + Jekyll 搭建。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 访问地址
 
-### Markdown
+https://haokun.github.io
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 本地运行
 
-```markdown
-Syntax highlighted code block
+### 环境要求
 
-# Header 1
-## Header 2
-### Header 3
+- Ruby 3.0+
+- Bundler
 
-- Bulleted
-- List
+### 安装依赖
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+bundle install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 本地预览
 
-### Jekyll Themes
+```bash
+bundle exec jekyll serve
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Marinkun/haokun.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+然后访问 http://localhost:4000 查看博客。
 
-### Support or Contact
+## 写文章
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+在 `_posts` 目录下创建新的 Markdown 文件，文件名格式为：
+
+```
+YYYY-MM-DD-文章标题.md
+```
+
+文件开头需要包含 Front Matter：
+
+```yaml
+---
+layout: post
+title: "文章标题"
+date: 2026-07-28 10:00:00 +0800
+categories: [分类]
+tags: [标签1, 标签2]
+---
+```
+
+## 目录结构
+
+```
+.
+├── _config.yml      # Jekyll 配置文件
+├── _posts/          # 博客文章
+│   └── YYYY-MM-DD-article.md
+├── about.md         # 关于页面
+├── index.md         # 首页
+├── Gemfile          # Ruby 依赖
+└── README.md
+```
+
+## 许可证
+
+MIT License
