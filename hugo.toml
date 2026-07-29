@@ -1,7 +1,9 @@
-baseURL = "https://Marinkun.github.io/"
+baseURL = "/"
 title = "Haokun's Blog"
 enableRobotsTXT = true
 enableGitInfo = false
+canonifyURLs = false
+relativeURLs = true
 
 [params]
   description = "分享技术、生活与思考"

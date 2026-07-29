@@ -3,7 +3,7 @@
 <head>
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   {{ partial "head.html" . }}
-  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 </head>
 <body>
   <div id="earth-bg"></div>
@@ -43,10 +43,10 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="{{ "js/earth-bg.js" | absURL }}"></script>
+  <script src="{{ "js/earth-bg.js" | relURL }}"></script>
   {{ if .IsHome }}
-    <script src="{{ "js/earth-intro.js" | absURL }}"></script>
+    <script src="{{ "js/earth-intro.js" | relURL }}"></script>
   {{ end }}
-  <script src="{{ "js/main.js" | absURL }}"></script>
+  <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Haokun's Blog</title><link>https://Marinkun.github.io/posts/</link><description>Recent content in Posts on Haokun's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 28 Jul 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://Marinkun.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到我的博客</title><link>https://Marinkun.github.io/posts/2026/07/28/welcome-to-my-blog/</link><pubDate>Tue, 28 Jul 2026 10:00:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/28/welcome-to-my-blog/</guid><description>&lt;p&gt;欢迎来到我的个人博客！这是我的第一篇博文。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Haokun's Blog</title><link>/posts/</link><description>Recent content in Posts on Haokun's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 28 Jul 2026 10:00:00 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到我的博客</title><link>/posts/2026/07/28/welcome-to-my-blog/</link><pubDate>Tue, 28 Jul 2026 10:00:00 +0800</pubDate><guid>/posts/2026/07/28/welcome-to-my-blog/</guid><description>&lt;p&gt;欢迎来到我的个人博客！这是我的第一篇博文。&lt;/p&gt;
 &lt;h2 id="为什么要写博客"&gt;为什么要写博客&lt;/h2&gt;
 &lt;p&gt;我决定开始写博客，主要有以下几个原因：&lt;/p&gt;
 &lt;ol&gt;
@@ -13,7 +13,7 @@
 &lt;li&gt;&lt;strong&gt;读书笔记&lt;/strong&gt; - 读过的好书和感悟&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;生活随笔&lt;/strong&gt; - 日常生活中的思考和感悟&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;希望我们能在这里一起成长！&lt;/p&gt;</description></item><item><title>GitHub Pages 搭建博客教程</title><link>https://Marinkun.github.io/posts/2026/07/27/github-pages-tutorial/</link><pubDate>Mon, 27 Jul 2026 14:30:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/27/github-pages-tutorial/</guid><description>&lt;p&gt;使用 GitHub Pages + Hugo 搭建个人博客是一个非常不错的选择，完全免费且构建速度极快。&lt;/p&gt;
+&lt;p&gt;希望我们能在这里一起成长！&lt;/p&gt;</description></item><item><title>GitHub Pages 搭建博客教程</title><link>/posts/2026/07/27/github-pages-tutorial/</link><pubDate>Mon, 27 Jul 2026 14:30:00 +0800</pubDate><guid>/posts/2026/07/27/github-pages-tutorial/</guid><description>&lt;p&gt;使用 GitHub Pages + Hugo 搭建个人博客是一个非常不错的选择，完全免费且构建速度极快。&lt;/p&gt;
 &lt;h2 id="准备工作"&gt;准备工作&lt;/h2&gt;
 &lt;p&gt;在开始之前，你需要：&lt;/p&gt;
 &lt;ul&gt;
@@ -40,7 +40,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server -D
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;访问 &lt;code&gt;http://localhost:1313&lt;/code&gt; 预览效果。&lt;/p&gt;
 &lt;h2 id="步骤五发布"&gt;步骤五：发布&lt;/h2&gt;
-&lt;p&gt;将代码推送到 GitHub 仓库，通过 GitHub Actions 自动构建部署即可！&lt;/p&gt;</description></item><item><title>程序员的高效学习方法</title><link>https://Marinkun.github.io/posts/2026/07/26/effective-learning-methods/</link><pubDate>Sun, 26 Jul 2026 09:00:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/26/effective-learning-methods/</guid><description>&lt;p&gt;作为程序员，持续学习是我们的必修课。分享一些我总结的高效学习方法。&lt;/p&gt;
+&lt;p&gt;将代码推送到 GitHub 仓库，通过 GitHub Actions 自动构建部署即可！&lt;/p&gt;</description></item><item><title>程序员的高效学习方法</title><link>/posts/2026/07/26/effective-learning-methods/</link><pubDate>Sun, 26 Jul 2026 09:00:00 +0800</pubDate><guid>/posts/2026/07/26/effective-learning-methods/</guid><description>&lt;p&gt;作为程序员，持续学习是我们的必修课。分享一些我总结的高效学习方法。&lt;/p&gt;
 &lt;h2 id="1-费曼学习法"&gt;1. 费曼学习法&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;用最简单的语言解释复杂的概念。&lt;/strong&gt; 如果你能把一个技术点讲给一个外行听，说明你真的懂了。&lt;/p&gt;
 &lt;p&gt;实践方法：&lt;/p&gt;

@@ -35,7 +35,7 @@
   </div>
 
   <ul class="posts-list">
-    {{ range .Site.RegularPages }}
+    {{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
     <li class="reveal">
       <a class="post-card" href="{{ .RelPermalink }}">
         <div class="post-card-meta">
