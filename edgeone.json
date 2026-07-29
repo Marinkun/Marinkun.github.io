@@ -1,0 +1,12 @@
+{
+  "build": {
+    "command": "jekyll build",
+    "output": "_site"
+  },
+  "install": {
+    "command": "bundle install"
+  },
+  "framework": {
+    "type": "jekyll"
+  }
+}
