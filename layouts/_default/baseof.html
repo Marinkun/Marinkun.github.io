@@ -48,5 +48,12 @@
     <script src="{{ "js/earth-intro.js" | relURL }}"></script>
   {{ end }}
   <script src="{{ "js/main.js" | relURL }}"></script>
+
+  {{- /* Google AdSense 全局脚本（只需加载一次，enable=true 且配置了 client 时生效） */ -}}
+  {{- with .Site.Params.adsense -}}
+    {{- if and .enable .client -}}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .client }}" crossorigin="anonymous"></script>
+    {{- end -}}
+  {{- end -}}
 </body>
 </html>

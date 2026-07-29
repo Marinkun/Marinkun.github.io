@@ -28,6 +28,51 @@ relativeURLs = true
     emitMetadata = "0"
     inputPosition = "top"
 
+  # ============================================================
+  # 盈利 / 广告配置
+  # 所有模块默认关闭，填好参数后把对应 enable 改成 true 即可
+  # ============================================================
+
+  # 赞赏打赏（零门槛，放收款码即可）
+  # 把你的微信/支付宝收款码图片放到 static/img/ 目录下
+  # 文件名：wechat-qr.jpg / alipay-qr.jpg
+  [params.reward]
+    enable = true
+    wechatQR = "img/wechat-qr.jpg"
+    alipayQR = "img/alipay-qr.jpg"
+    note = "扫码打赏，金额随意，感谢支持！"
+
+  # Google AdSense（需注册审核通过后使用）
+  # 注册：https://www.google.com/adsense
+  # 审核通过后获取 Publisher ID（格式：ca-pub-XXXXXXXXXXXXXXXX）
+  [params.adsense]
+    enable = false
+    client = "ca-pub-XXXXXXXXXXXXXXXX"
+    slotTop = ""
+    slotBottom = ""
+    slotSidebar = ""
+
+  # 百度联盟（需网站备案 + 审核通过后使用）
+  # 注册：https://union.baidu.com
+  [params.baiduAds]
+    enable = false
+    cupId = ""
+
+  # 联盟营销（京东联盟 / Amazon Associates）
+  # 注册京东联盟：https://union.jd.com
+  # 注册 Amazon：https://affiliate-program.amazon.com
+  # 也可以在单篇文章的 Front Matter 里用 affiliate 参数覆盖
+  [params.affiliate]
+    enable = false
+    disclaimer = "以上为联盟营销推荐链接，通过链接购买我可获得少量佣金，不影响你的价格。"
+    [[params.affiliate.defaultItems]]
+      title = "程序员修炼之道"
+      desc = "从小工到专家，程序员必读经典"
+      price = "¥45.9"
+      platform = "京东"
+      url = "https://union.jd.com/your-link"
+      image = ""
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

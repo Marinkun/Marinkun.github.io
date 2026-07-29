@@ -1,0 +1,32 @@
+{{- /*
+  Google AdSense 广告位
+  通过 dict 传参调用：{{ partial "adsense.html" (dict "Site" .Site "Position" "top") }}
+  全局脚本在 baseof.html 底部加载（只需一次）
+*/ -}}
+{{- $ads := .Site.Params.adsense -}}
+{{- if and $ads $ads.enable -}}
+{{- $client := $ads.client | default "" -}}
+{{- if $client -}}
+{{- $slot := "" -}}
+{{- if eq .Position "top" }}{{- $slot = $ads.slotTop | default "" -}}{{- end -}}
+{{- if eq .Position "bottom" }}{{- $slot = $ads.slotBottom | default "" -}}{{- end -}}
+{{- if eq .Position "sidebar" }}{{- $slot = $ads.slotSidebar | default "" -}}{{- end -}}
+
+<section class="ads-section reveal" style="margin-top:{{ if eq .Position "top" }}20px{{ else }}40px{{ end }};margin-bottom:20px;">
+  <div class="glass-card" style="padding:16px;text-align:center;position:relative;">
+    <span style="position:absolute;top:6px;right:12px;font-size:0.65em;color:var(--text-muted);letter-spacing:1px;">广告 · AD</span>
+    <ins class="adsbygoogle"
+         style="display:block;min-height:90px;"
+         data-ad-client="{{ $client }}"
+         {{- with $slot }}
+         data-ad-slot="{{ . }}"
+         {{- end }}
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</section>
+{{- end -}}
+{{- end -}}

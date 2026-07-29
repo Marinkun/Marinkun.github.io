@@ -32,9 +32,19 @@
       {{ end }}
     </header>
 
+    {{ partial "adsense.html" (dict "Site" .Site "Position" "top") }}
+
     <div class="post-content glass-card" style="padding: 40px;">
       {{ .Content }}
     </div>
+
+    {{ partial "adsense.html" (dict "Site" .Site "Position" "bottom") }}
+
+    {{ partial "baidu-ads.html" (dict "Site" .Site "Position" "middle") }}
+
+    {{ partial "affiliate.html" . }}
+
+    {{ partial "reward.html" . }}
   </article>
 
   {{ partial "comments.html" . }}

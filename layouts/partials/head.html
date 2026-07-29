@@ -45,12 +45,12 @@
   用 <meta> 的 CSP frame-ancestors 做浏览器端兜底。
 */ -}}
 <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-  script-src 'self' 'unsafe-inline' https://giscus.app;
+  script-src 'self' 'unsafe-inline' https://giscus.app https://pagead2.googlesyndication.com https://cpro.baidustatic.com;
   style-src 'self' 'unsafe-inline' data:;
   img-src 'self' data: https:;
   font-src 'self' data:;
-  connect-src 'self';
-  frame-src https://giscus.app;
+  connect-src 'self' https://pagead2.googlesyndication.com;
+  frame-src https://giscus.app https://googleads.g.doubleclick.net;
   frame-ancestors 'none';
   base-uri 'self';
   form-action 'self' https:;">

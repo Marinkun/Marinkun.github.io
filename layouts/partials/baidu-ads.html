@@ -1,0 +1,17 @@
+{{- /*
+  百度联盟广告位
+  通过 dict 传参调用：{{ partial "baidu-ads.html" (dict "Site" .Site "Position" "middle") }}
+  需网站 ICP 备案 + 百度联盟审核通过后使用
+*/ -}}
+{{- $baidu := .Site.Params.baiduAds -}}
+{{- if and $baidu $baidu.enable -}}
+{{- $cupId := $baidu.cupId | default "" -}}
+{{- if $cupId -}}
+<section class="ads-section reveal" style="margin:30px 0;">
+  <div class="glass-card" style="padding:16px;text-align:center;position:relative;">
+    <span style="position:absolute;top:6px;right:12px;font-size:0.65em;color:var(--text-muted);letter-spacing:1px;">广告 · AD</span>
+    <div id="baidu-ad-{{ .Position | default "middle" }}"></div>
+  </div>
+</section>
+{{- end -}}
+{{- end -}}

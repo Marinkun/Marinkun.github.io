@@ -1,0 +1,61 @@
+{{- /*
+  联盟营销推荐卡片
+  - 京东联盟 / Amazon Associates
+  - 在文章底部展示推荐商品卡片，读者购买后你获得分成
+  - 使用前需要：
+    1. 京东联盟注册：https://union.jd.com
+    2. Amazon Associates 注册：https://affiliate-program.amazon.com
+    3. 获取推广链接，填入 hugo.toml 的 [params.affiliate] 配置段
+  - 也可以在文章 Front Matter 中通过 affiliate 参数单独配置每篇文章的推荐商品
+*/ -}}
+{{- $aff := .Site.Params.affiliate -}}
+{{- if and $aff $aff.enable -}}
+{{- $items := .Params.affiliate | default $aff.defaultItems -}}
+{{- if $items -}}
+<section class="affiliate-section reveal" style="margin-top:50px;">
+  <div class="section-header reveal">
+    <div class="section-icon">🛒</div>
+    <h2 class="section-title">推荐好物</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="affiliate-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+    {{- range $items -}}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer sponsored"
+       class="affiliate-card glass-card"
+       style="display:block;padding:20px;text-decoration:none;color:inherit;transition:all 0.3s ease;">
+      {{- with .image }}
+      <div style="width:100%;height:120px;border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--glass-bg);">
+        <img src="{{ . }}" alt="{{ $.title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+      </div>
+      {{- end }}
+      <div style="font-weight:600;color:var(--text-primary);font-size:0.95em;margin-bottom:6px;line-height:1.4;">
+        {{ .title }}
+      </div>
+      {{- with .desc }}
+      <div style="font-size:0.8em;color:var(--text-muted);margin-bottom:8px;line-height:1.5;">
+        {{ . }}
+      </div>
+      {{- end }}
+      {{- with .price }}
+      <div style="font-size:1.1em;color:var(--cyan);font-weight:700;">
+        {{ . }}
+      </div>
+      {{- end }}
+      {{- with .platform }}
+      <div style="font-size:0.7em;color:var(--text-muted);margin-top:6px;">
+        🏷️ {{ . }}
+      </div>
+      {{- end }}
+    </a>
+    {{- end -}}
+  </div>
+
+  {{- with $aff.disclaimer -}}
+  <p style="margin-top:16px;font-size:0.75em;color:var(--text-muted);text-align:center;">
+    {{ . }}
+  </p>
+  {{- end -}}
+</section>
+{{- end -}}
+{{- end -}}
