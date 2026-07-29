@@ -1,0 +1,38 @@
+baseURL = "https://Marinkun.github.io/"
+title = "Haokun's Blog"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[params]
+  description = "分享技术、生活与思考"
+  author = "Haokun"
+  email = "your-email@example.com"
+  githubURL = "https://github.com/Marinkun"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[permalinks]
+  posts = "/posts/:year/:month/:day/:slug/"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "关于我"
+    url = "/about/"
+    weight = 2
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]

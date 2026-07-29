@@ -1,0 +1,20 @@
+<!doctype html><html lang=zh-CN><head><title>GitHub Pages 搭建博客教程 | Haokun's Blog</title><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="分享技术、生活与思考"><meta name=author content="Haokun"><link rel=icon type=image/svg+xml href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>"><link rel=stylesheet href=https://Marinkun.github.io/css/main.css></head><body><div id=earth-bg></div><div id=particles></div><nav class=nav-bar><div class=nav-container><a href=/ class=nav-logo><span class=logo-icon>◆</span>
+<span class=logo-text>Haokun's Blog</span></a><div class=nav-links><a href=/ class=nav-link><span class=nav-dot></span>首页
+</a><a href=/about/ class=nav-link><span class=nav-dot></span>关于我</a></div></div></nav><main class=main-content><div class=section-wrapper style=padding-top:40px><article class=reveal><header class=post-header><h1 class=post-title>GitHub Pages 搭建博客教程</h1><div class=post-info><span class=post-info-item><span>📅</span>
+2026年07月27日
+</span><span class=post-info-item><span>📂</span>
+技术</span></div><div style=margin-top:16px;display:flex;gap:8px;flex-wrap:wrap><span class=post-tag style="display:inline-block;padding:6px 14px;font-size:.8em;color:#0ff;border:1px solid rgba(0,255,255,.3);border-radius:20px;background:rgba(0,255,255,8%)">#GitHub</span>
+<span class=post-tag style="display:inline-block;padding:6px 14px;font-size:.8em;color:#0ff;border:1px solid rgba(0,255,255,.3);border-radius:20px;background:rgba(0,255,255,8%)">#Hugo</span>
+<span class=post-tag style="display:inline-block;padding:6px 14px;font-size:.8em;color:#0ff;border:1px solid rgba(0,255,255,.3);border-radius:20px;background:rgba(0,255,255,8%)">#博客</span></div></header><div class="post-content glass-card" style=padding:40px><p>使用 GitHub Pages + Hugo 搭建个人博客是一个非常不错的选择，完全免费且构建速度极快。</p><h2 id=准备工作>准备工作</h2><p>在开始之前，你需要：</p><ul><li>一个 GitHub 账号</li><li>基本的 Git 操作知识</li><li>了解 Markdown 语法</li></ul><h2 id=步骤一创建仓库>步骤一：创建仓库</h2><p>在 GitHub 上创建一个名为 <code>username.github.io</code> 的仓库，其中 <code>username</code> 是你的 GitHub 用户名。</p><h2 id=步骤二安装-hugo>步骤二：安装 Hugo</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># macOS</span>
+</span></span><span class=line><span class=cl>brew install hugo
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Windows</span>
+</span></span><span class=line><span class=cl>winget install Hugo.Hugo.Extended
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Linux (snap)</span>
+</span></span><span class=line><span class=cl>snap install hugo
+</span></span></code></pre></div><h2 id=步骤三创建博客>步骤三：创建博客</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new site my-blog
+</span></span><span class=line><span class=cl><span class=nb>cd</span> my-blog
+</span></span><span class=line><span class=cl>hugo new posts/my-first-post.md
+</span></span></code></pre></div><h2 id=步骤四构建与预览>步骤四：构建与预览</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo server -D
+</span></span></code></pre></div><p>访问 <code>http://localhost:1313</code> 预览效果。</p><h2 id=步骤五发布>步骤五：发布</h2><p>将代码推送到 GitHub 仓库，通过 GitHub Actions 自动构建部署即可！</p><h2 id=总结>总结</h2><p>Hugo 以 Go 语言编写，构建速度比 Jekyll 快 10-100 倍，非常适合技术人员搭建个人博客。</p></div></article></div></main><footer class=footer><div class=footer-content><p>© 2026 Haokun · Powered by Hugo</p><div class=footer-links><a href=https://github.com/Marinkun target=_blank>GitHub</a></div></div></footer><script src=https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js></script><script src=https://Marinkun.github.io/js/earth-bg.js></script><script src=https://Marinkun.github.io/js/main.js></script></body></html>

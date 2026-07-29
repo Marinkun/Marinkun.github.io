@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div id="earth-intro">
+  <div class="earth-intro-text">
+    <div class="earth-intro-title">HAOKUN'S BLOG</div>
+    <div class="earth-intro-subtitle">分 享 技 术 · 记 录 生 活</div>
+    <div class="earth-intro-location">
+      <span class="location-dot"></span>
+      <span>定位中 · 河南信阳</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero-section">
+  <div class="hero-glow"></div>
+  <h1 class="hero-title reveal">
+    <span class="gradient-text">探索无限可能</span>
+  </h1>
+  <p class="hero-subtitle reveal">
+    从 GIS 到前端，从三维建模到空间分析，<br>
+    记录技术成长的每一步，分享对世界的思考。
+  </p>
+  <div class="hero-tags reveal">
+    <span class="hero-tag">🌍 GIS 开发</span>
+    <span class="hero-tag">🎨 三维可视化</span>
+    <span class="hero-tag">💻 全栈开发</span>
+    <span class="hero-tag">📚 学习分享</span>
+  </div>
+</div>
+
+<div class="section-wrapper">
+  <div class="section-header reveal">
+    <div class="section-icon">📝</div>
+    <h2 class="section-title">最新文章</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <ul class="posts-list">
+    {{ range .Site.RegularPages }}
+    <li class="reveal">
+      <a class="post-card" href="{{ .RelPermalink }}">
+        <div class="post-card-meta">
+          <span class="post-date-badge">
+            <span>📅</span>
+            {{ .Date.Format "2006年01月02日" }}
+          </span>
+          {{ with .Params.categories }}
+            {{ range . }}
+              <span class="post-category">{{ . }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
+        <h3 class="post-card-title">{{ .Title }}</h3>
+        {{ with .Summary }}
+        <p class="post-card-excerpt">{{ . | plainify | truncate 40 }}</p>
+        {{ end }}
+        {{ with .Params.tags }}
+        <div class="post-card-tags">
+          {{ range . }}
+          <span class="post-tag">#{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

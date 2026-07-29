@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+</head>
+<body>
+  <div id="earth-bg"></div>
+  <div id="particles"></div>
+
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <a href="{{ "/" | relURL }}" class="nav-logo">
+        <span class="logo-icon">◆</span>
+        <span class="logo-text">{{ .Site.Title }}</span>
+      </a>
+      <div class="nav-links">
+        <a href="{{ "/" | relURL }}" class="nav-link {{ if .IsHome }}active{{ end }}">
+          <span class="nav-dot"></span>首页
+        </a>
+        <a href="{{ "/about/" | relURL }}" class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}">
+          <span class="nav-dot"></span>关于我
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© {{ now.Format "2006" }} {{ .Site.Params.author }} · Powered by Hugo</p>
+      <div class="footer-links">
+        <a href="{{ .Site.Params.githubURL }}" target="_blank">GitHub</a>
+        {{ with .OutputFormats.Get "RSS" }}
+          <a href="{{ .Permalink }}">RSS</a>
+        {{ end }}
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="{{ "js/earth-bg.js" | absURL }}"></script>
+  {{ if .IsHome }}
+    <script src="{{ "js/earth-intro.js" | absURL }}"></script>
+  {{ end }}
+  <script src="{{ "js/main.js" | absURL }}"></script>
+</body>
+</html>

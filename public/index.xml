@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Haokun's Blog</title><link>https://Marinkun.github.io/</link><description>Recent content in 首页 on Haokun's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 28 Jul 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://Marinkun.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到我的博客</title><link>https://Marinkun.github.io/posts/2026/07/28/welcome-to-my-blog/</link><pubDate>Tue, 28 Jul 2026 10:00:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/28/welcome-to-my-blog/</guid><description>&lt;p&gt;欢迎来到我的个人博客！这是我的第一篇博文。&lt;/p&gt;
+&lt;h2 id="为什么要写博客"&gt;为什么要写博客&lt;/h2&gt;
+&lt;p&gt;我决定开始写博客，主要有以下几个原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;记录学习历程&lt;/strong&gt; - 记录技术学习的过程和心得&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享知识&lt;/strong&gt; - 希望我的经验能帮助到其他人&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;思考沉淀&lt;/strong&gt; - 写作是最好的思考方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="博客内容规划"&gt;博客内容规划&lt;/h2&gt;
+&lt;p&gt;这个博客主要会包含以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;技术文章&lt;/strong&gt; - 编程、开发工具、架构设计等&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;读书笔记&lt;/strong&gt; - 读过的好书和感悟&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;生活随笔&lt;/strong&gt; - 日常生活中的思考和感悟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望我们能在这里一起成长！&lt;/p&gt;</description></item><item><title>GitHub Pages 搭建博客教程</title><link>https://Marinkun.github.io/posts/2026/07/27/github-pages-tutorial/</link><pubDate>Mon, 27 Jul 2026 14:30:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/27/github-pages-tutorial/</guid><description>&lt;p&gt;使用 GitHub Pages + Hugo 搭建个人博客是一个非常不错的选择，完全免费且构建速度极快。&lt;/p&gt;
+&lt;h2 id="准备工作"&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;在开始之前，你需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个 GitHub 账号&lt;/li&gt;
+&lt;li&gt;基本的 Git 操作知识&lt;/li&gt;
+&lt;li&gt;了解 Markdown 语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="步骤一创建仓库"&gt;步骤一：创建仓库&lt;/h2&gt;
+&lt;p&gt;在 GitHub 上创建一个名为 &lt;code&gt;username.github.io&lt;/code&gt; 的仓库，其中 &lt;code&gt;username&lt;/code&gt; 是你的 GitHub 用户名。&lt;/p&gt;
+&lt;h2 id="步骤二安装-hugo"&gt;步骤二：安装 Hugo&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# macOS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Windows&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;winget install Hugo.Hugo.Extended
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Linux (snap)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;snap install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="步骤三创建博客"&gt;步骤三：创建博客&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new site my-blog
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; my-blog
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new posts/my-first-post.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="步骤四构建与预览"&gt;步骤四：构建与预览&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server -D
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;访问 &lt;code&gt;http://localhost:1313&lt;/code&gt; 预览效果。&lt;/p&gt;
+&lt;h2 id="步骤五发布"&gt;步骤五：发布&lt;/h2&gt;
+&lt;p&gt;将代码推送到 GitHub 仓库，通过 GitHub Actions 自动构建部署即可！&lt;/p&gt;</description></item><item><title>程序员的高效学习方法</title><link>https://Marinkun.github.io/posts/2026/07/26/effective-learning-methods/</link><pubDate>Sun, 26 Jul 2026 09:00:00 +0800</pubDate><guid>https://Marinkun.github.io/posts/2026/07/26/effective-learning-methods/</guid><description>&lt;p&gt;作为程序员，持续学习是我们的必修课。分享一些我总结的高效学习方法。&lt;/p&gt;
+&lt;h2 id="1-费曼学习法"&gt;1. 费曼学习法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;用最简单的语言解释复杂的概念。&lt;/strong&gt; 如果你能把一个技术点讲给一个外行听，说明你真的懂了。&lt;/p&gt;
+&lt;p&gt;实践方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;写技术博客&lt;/li&gt;
+&lt;li&gt;在团队内做分享&lt;/li&gt;
+&lt;li&gt;用自己的话总结笔记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-项目驱动学习"&gt;2. 项目驱动学习&lt;/h2&gt;
+&lt;p&gt;不要从书的第一页读到最后一页，而是&lt;strong&gt;带着问题去学习&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;找到一个你感兴趣的项目，边做边学，遇到不会的再去查资料。这样学习效率最高。&lt;/p&gt;
+&lt;h2 id="3-间隔重复"&gt;3. 间隔重复&lt;/h2&gt;
+&lt;p&gt;人的记忆是会遗忘的，所以需要定期复习。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一天学习新知识&lt;/li&gt;
+&lt;li&gt;第二天复习一次&lt;/li&gt;
+&lt;li&gt;一周后再复习一次&lt;/li&gt;
+&lt;li&gt;一个月后再复习一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-输出倒逼输入"&gt;4. 输出倒逼输入&lt;/h2&gt;
+&lt;p&gt;当你要写一篇文章或做一个分享时，你会发现自己的知识漏洞，从而促使你去深入学习。&lt;/p&gt;
+&lt;h2 id="最后"&gt;最后&lt;/h2&gt;
+&lt;p&gt;学习是一辈子的事，找到适合自己的方法最重要。希望这些方法对你有帮助！&lt;/p&gt;</description></item><item><title>关于我</title><link>https://Marinkun.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Marinkun.github.io/about/</guid><description>&lt;div class="about-section"&gt;
+&lt;div class="about-card"&gt;
+&lt;h3&gt;👋 个人简介&lt;/h3&gt;
+你好！我是 Haokun，一名热爱技术的 GIS 开发者。专注于空间信息处理、三维可视化和全栈开发。这是我的个人博客，记录我在技术、生活和学习上的点点滴滴。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="about-section"&gt;
+&lt;h2 class="section-title"&gt;技术栈&lt;/h2&gt;
+&lt;div class="skill-grid"&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Python&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;JavaScript&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Go&lt;/div&gt;&lt;div class="skill-level"&gt;掌握&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;React&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Vue&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Cesium&lt;/div&gt;&lt;div class="skill-level"&gt;精通&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Three.js&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Node.js&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Django&lt;/div&gt;&lt;div class="skill-level"&gt;掌握&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Docker&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;Kubernetes&lt;/div&gt;&lt;div class="skill-level"&gt;掌握&lt;/div&gt;&lt;/div&gt;
+&lt;div class="skill-item"&gt;&lt;div class="skill-name"&gt;PostGIS&lt;/div&gt;&lt;div class="skill-level"&gt;熟练&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="about-section"&gt;
+&lt;div class="about-card"&gt;
+&lt;h3&gt;🎯 研究方向&lt;/h3&gt;
+- 三维地理信息系统（3D GIS）
+- 倾斜摄影与三维建模
+- 空间数据可视化
+- WebGL / WebGPU 图形开发
+- 遥感影像处理
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="about-section"&gt;
+&lt;div class="about-card"&gt;
+&lt;h3&gt;⭐ 兴趣爱好&lt;/h3&gt;
+- 📚 阅读技术书籍和科幻小说
+- 🎮 玩游戏放松
+- 🏃 跑步健身
+- ✍️ 写博客记录生活
+- 📷 摄影
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="about-section"&gt;
+&lt;h2 class="section-title"&gt;联系方式&lt;/h2&gt;
+&lt;div class="about-card"&gt;
+&lt;ul class="contact-list"&gt;
+&lt;li&gt;&lt;span class="contact-icon"&gt;G&lt;/span&gt;&lt;a href="https://github.com/Marinkun" target="_blank"&gt;GitHub: @Marinkun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="contact-icon"&gt;@&lt;/span&gt;&lt;a href="mailto:your-email@example.com"&gt;Email: your-email@example.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="contact-icon"&gt;📍&lt;/span&gt;&lt;span&gt;河南 · 信阳&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;欢迎留言讨论，一起交流学习！&lt;/p&gt;</description></item></channel></rss>
