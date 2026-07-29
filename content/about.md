@@ -54,11 +54,47 @@ permalink: /about/
 <h2 class="section-title">联系方式</h2>
 <div class="about-card">
 <ul class="contact-list">
-<li><span class="contact-icon">G</span><a href="https://github.com/Marinkun" target="_blank">GitHub: @Marinkun</a></li>
-<li><span class="contact-icon">@</span><a href="mailto:your-email@example.com">Email: your-email@example.com</a></li>
-<li><span class="contact-icon">📍</span><span>河南 · 信阳</span></li>
+<li>
+  <span class="contact-icon">G</span>
+  <span class="contact-text">
+    <a href="https://github.com/Marinkun" target="_blank" rel="noopener noreferrer">GitHub: @Marinkun</a>
+  </span>
+</li>
+<li>
+  <span class="contact-icon">@</span>
+  <span class="contact-text">
+    <span id="privacy-email">正在加载邮箱，请启用 JavaScript...</span>
+    <noscript>（已启用邮箱防爬虫保护，请启用 JavaScript 查看）</noscript>
+  </span>
+</li>
+<li>
+  <span class="contact-icon">📍</span>
+  <span class="contact-text">河南 · 信阳</span>
+</li>
 </ul>
+<p style="margin-top:16px;font-size:0.85em;color:var(--text-muted);">
+  💡 提示：本站联系方式已采用反爬虫与引用来源保护，防止第三方数据收集。
+</p>
 </div>
 </div>
 
 欢迎留言讨论，一起交流学习！
+
+<script>
+(function() {
+  // 博客专用邮箱，按 obfuscated 方式拆分，静态源码中不出现完整邮箱字符串
+  var parts = ['haokun', 'blog', 'proton', 'me'];
+  var local = parts[0] + '.' + parts[1];
+  var domain = parts[2] + '.' + parts[3];
+  var email = local + '@' + domain;
+
+  var el = document.getElementById('privacy-email');
+  if (el) {
+    var a = document.createElement('a');
+    a.href = 'mai' + 'lto:' + email + '?subject=来自%20Haokun%20Blog%20的访客';
+    a.rel = 'noopener';
+    a.textContent = 'Email: ' + email;
+    el.parentNode.replaceChild(a, el);
+  }
+})();
+</script>

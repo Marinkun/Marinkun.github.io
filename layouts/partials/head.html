@@ -1,8 +1,72 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="{{ .Site.Params.description }}">
 <meta name="author" content="{{ .Site.Params.author }}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#020617">
+<meta name="generator" content="Hugo {{ hugo.Version }}">
+
+{{- /* SEO / 搜索展现基础信息 */ -}}
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta name="twitter:card" content="summary_large_image">
+
+{{- /*
+  隐私保护核心：Referrer-Policy
+  策略：strict-origin-when-cross-origin
+    - 同域名下带完整 referrer（站内跳转分析正常）
+    - 跨域名时只带 Origin（域名），不带具体文章路径和查询参数
+    - 从 HTTPS → HTTP 不发送任何 Referrer
+  这可以防止外链网站（GitHub、你博文里的任意链接）从 HTTP Referer 头读取到
+  "访客来自博客哪一篇文章、哪个标签页" 等浏览行为信息。
+*/ -}}
+<meta name="referrer" content="{{ with .Site.Params.privacyReferrer }}{{ . }}{{ else }}strict-origin-when-cross-origin{{ end }}">
+
+{{- /*
+  隐私保护：Robots + 内容版权 + 数据抓取声明
+  即使外部爬虫不遵守 robots.txt，也可以通过 meta robots 做二次约束。
+  nosnippet  禁止搜索引擎在结果中展示正文摘要
+  notranslate 禁止机器翻译（减少把你的文章全文送进第三方数据集训练）
+  noimageindex 禁止收录页面中的图片索引
+  注意：为了让标题和基础描述能被搜到，这里只加 notranslate，不加 nosnippet/noindex。
+*/ -}}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, notranslate, noarchive">
+<meta name="googlebot" content="index, follow, notranslate">
+<meta name="bingbot" content="index, follow, notranslate">
+<meta name="baiduspider" content="index, follow, notranslate">
+
+{{- /*
+  隐私保护：防止点击劫持（Clickjacking）
+  X-Frame-Options 通过 HTTP 响应头发最好，但静态托管有时拿不到完全控制，
+  用 <meta> 的 CSP frame-ancestors 做浏览器端兜底。
+*/ -}}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self';
+  script-src 'self' 'unsafe-inline' https://giscus.app;
+  style-src 'self' 'unsafe-inline' data:;
+  img-src 'self' data: https:;
+  font-src 'self' data:;
+  connect-src 'self';
+  frame-src https://giscus.app;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self' https:;">
+
+{{- /*
+  强制 HTTPS 传输：Strict-Transport-Security（通过 <meta> simulate + 推荐配置说明）
+  meta 方式对 HSTS 的支持有限，实际部署推荐在 EdgeOne / GitHub Pages / Cloudflare
+  控制台里开 HSTS，设置 max-age=31536000; includeSubDomains; preload。
+*/ -}}
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+
+{{- /* XSS / MIME 嗅探防护 */ -}}
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 {{ with .OutputFormats.Get "RSS" }}
   <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">

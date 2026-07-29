@@ -11,6 +11,23 @@ relativeURLs = true
   email = "your-email@example.com"
   githubURL = "https://github.com/Marinkun"
 
+  # 隐私保护：Referrer 控制（不把页面地址带到外链网站）
+  privacyReferrer = "strict-origin-when-cross-origin"
+
+  # Giscus 评论（数据存在你自己的 GitHub Discussions 仓库）
+  # 在 https://giscus.app 输入你的仓库后生成 repoId / categoryId，替换下面的占位符
+  # 然后把 enable 改成 true
+  [params.giscus]
+    enable = false
+    repo = "Marinkun/Marinkun.github.io"
+    repoId = "R_placeholder_replace_me"
+    category = "Announcements"
+    categoryId = "DIC_placeholder_replace_me"
+    mapping = "pathname"
+    reactionsEnabled = "0"
+    emitMetadata = "0"
+    inputPosition = "top"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

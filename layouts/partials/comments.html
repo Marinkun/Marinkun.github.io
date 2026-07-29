@@ -1,0 +1,77 @@
+{{- /*
+  Giscus 评论系统：
+  - 数据存储在你自己的 GitHub Discussions 仓库（隐私可控，不想用随时删仓库数据）
+  - 无需用户在本站注册账号；访客用 GitHub 账号登录后发言
+  - 不追踪、不广告、完全开源 https://giscus.app
+
+  使用前需要完成的 3 步（一次性）：
+  1. 新建 GitHub 仓库 或 复用 Marinkun/Marinkun.github.io 仓库，并在仓库设置里开启 Discussions 功能（Settings → General → Features → 勾选 Discussions）
+  2. 为该仓库安装 Giscus App：https://github.com/apps/giscus （授权你要用于评论的仓库即可，别授权全部仓库，保护隐私）
+  3. 在 https://giscus.app 输入仓库名，会生成 repo_id、category_id；把下方 Site.Params.giscus 里的占位符替换成生成的值
+
+  下面默认配置是严格隐私模式：只显示自己仓库里的讨论，不显示任何推荐内容，不显示元数据，隐藏头像等。
+*/ -}}
+
+{{- $giscus := .Site.Params.giscus -}}
+{{- if and $giscus $giscus.enable -}}
+<section class="comments-section reveal" style="margin-top:60px;">
+  <div class="section-header reveal">
+    <div class="section-icon">💬</div>
+    <h2 class="section-title">评论（GitHub Discussions）</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="glass-card" style="padding:24px 28px;">
+    <p style="font-size:0.9em;color:var(--text-secondary);margin-bottom:18px;">
+      🔒 评论数据存放在本站对应的 <a href="https://github.com/{{ $giscus.repo | default "Marinkun/blog-comments" }}/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> 仓库内，不经过任何第三方评论服务商。发言需用 GitHub 账号登录，<strong>不会把你的身份、邮箱交给本站</strong>。
+    </p>
+
+    <script src="https://giscus.app/client.js"
+            data-repo="{{ $giscus.repo | default "Marinkun/blog-comments" }}"
+            data-repo-id="{{ $giscus.repoId | default "R_placeholder_repoId" }}"
+            data-category="{{ $giscus.category | default "Announcements" }}"
+            data-category-id="{{ $giscus.categoryId | default "DIC_placeholder_categoryId" }}"
+            data-mapping="{{ $giscus.mapping | default "pathname" }}"
+            data-strict="0"
+            data-reactions-enabled="{{ $giscus.reactionsEnabled | default "0" }}"
+            data-emit-metadata="{{ $giscus.emitMetadata | default "0" }}"
+            data-input-position="{{ $giscus.inputPosition | default "top" }}"
+            data-theme="preferred_color_scheme"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+
+    <noscript>
+      <p style="font-size:0.85em;color:var(--text-muted);">
+        评论系统需要启用 JavaScript。你可以直接前往
+        <a href="https://github.com/{{ $giscus.repo | default "Marinkun/blog-comments" }}/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a>
+        查看或留言。
+      </p>
+    </noscript>
+  </div>
+</section>
+{{- else -}}
+{{- /*
+  未配置 Giscus 时显示一个占位提示，避免页面空白；
+  如果你暂时不想接入评论，可以删除这个 block。
+*/ -}}
+<section class="comments-section reveal" style="margin-top:60px;">
+  <div class="section-header reveal">
+    <div class="section-icon">💬</div>
+    <h2 class="section-title">留言交流</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="glass-card" style="padding:28px;">
+    <p style="color:var(--text-secondary);margin-bottom:12px;">
+      👋 评论功能采用 <strong>Giscus + GitHub Discussions</strong>，数据只存放在你自己的 GitHub 仓库里，保护访客隐私。
+    </p>
+    <p style="font-size:0.9em;color:var(--text-muted);">
+      启用方法（一次性）：在 <code>hugo.toml</code> 的 <code>[params.giscus]</code> 段里填入 <code>repo</code> / <code>repoId</code> / <code>categoryId</code>，并将 <code>enable = true</code>。
+      具体步骤参考 <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">giscus.app</a>。
+    </p>
+  </div>
+</section>
+{{- end -}}

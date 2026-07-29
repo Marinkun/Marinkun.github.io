@@ -110,10 +110,45 @@
 &lt;h2 class="section-title"&gt;联系方式&lt;/h2&gt;
 &lt;div class="about-card"&gt;
 &lt;ul class="contact-list"&gt;
-&lt;li&gt;&lt;span class="contact-icon"&gt;G&lt;/span&gt;&lt;a href="https://github.com/Marinkun" target="_blank"&gt;GitHub: @Marinkun&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class="contact-icon"&gt;@&lt;/span&gt;&lt;a href="mailto:your-email@example.com"&gt;Email: your-email@example.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class="contact-icon"&gt;📍&lt;/span&gt;&lt;span&gt;河南 · 信阳&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;
+ &lt;span class="contact-icon"&gt;G&lt;/span&gt;
+ &lt;span class="contact-text"&gt;
+ &lt;a href="https://github.com/Marinkun" target="_blank" rel="noopener noreferrer"&gt;GitHub: @Marinkun&lt;/a&gt;
+ &lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;
+ &lt;span class="contact-icon"&gt;@&lt;/span&gt;
+ &lt;span class="contact-text"&gt;
+ &lt;span id="privacy-email"&gt;正在加载邮箱，请启用 JavaScript...&lt;/span&gt;
+ &lt;noscript&gt;（已启用邮箱防爬虫保护，请启用 JavaScript 查看）&lt;/noscript&gt;
+ &lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;
+ &lt;span class="contact-icon"&gt;📍&lt;/span&gt;
+ &lt;span class="contact-text"&gt;河南 · 信阳&lt;/span&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p style="margin-top:16px;font-size:0.85em;color:var(--text-muted);"&gt;
+ 💡 提示：本站联系方式已采用反爬虫与引用来源保护，防止第三方数据收集。
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;欢迎留言讨论，一起交流学习！&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;欢迎留言讨论，一起交流学习！&lt;/p&gt;
+&lt;script&gt;
+(function() {
+ // 博客专用邮箱，按 obfuscated 方式拆分，静态源码中不出现完整邮箱字符串
+ var parts = ['haokun', 'blog', 'proton', 'me'];
+ var local = parts[0] + '.' + parts[1];
+ var domain = parts[2] + '.' + parts[3];
+ var email = local + '@' + domain;
+
+ var el = document.getElementById('privacy-email');
+ if (el) {
+ var a = document.createElement('a');
+ a.href = 'mai' + 'lto:' + email + '?subject=来自%20Haokun%20Blog%20的访客';
+ a.rel = 'noopener';
+ a.textContent = 'Email: ' + email;
+ el.parentNode.replaceChild(a, el);
+ }
+})();
+&lt;/script&gt;</description></item></channel></rss>
