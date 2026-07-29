@@ -1,12 +1,6 @@
 {
   "build": {
-    "command": "jekyll build",
+    "command": "gem install bundler jekyll && bundle install && jekyll build",
     "output": "_site"
-  },
-  "install": {
-    "command": "bundle install"
-  },
-  "framework": {
-    "type": "jekyll"
   }
 }
