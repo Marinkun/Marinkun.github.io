@@ -29,8 +29,9 @@ jobs:
       - name: Deploy to Gitee Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITEE_TOKEN }}
+          personal_token: ${{ secrets.GITEE_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          external_repo: ${{ secrets.GITEE_USERNAME }}/${{ secrets.GITEE_REPO }}
-          cname: ${{ secrets.GITEE_CNAME }}
+          external_repository: ${{ secrets.GITEE_USERNAME }}/${{ secrets.GITEE_REPO }}
+          user_name: ${{ secrets.GITEE_USERNAME }}
+          user_email: ${{ secrets.GITEE_EMAIL }}
