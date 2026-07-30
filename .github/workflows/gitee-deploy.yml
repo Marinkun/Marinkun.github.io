@@ -27,11 +27,12 @@ jobs:
           hugo --gc --minify
 
       - name: Deploy to Gitee Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          personal_token: ${{ secrets.GITEE_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-          external_repository: ${{ secrets.GITEE_USERNAME }}/${{ secrets.GITEE_REPO }}
-          user_name: ${{ secrets.GITEE_USERNAME }}
-          user_email: ${{ secrets.GITEE_EMAIL }}
+        run: |
+          cd public
+          git init
+          git config user.name "${{ secrets.GITEE_USERNAME }}"
+          git config user.email "${{ secrets.GITEE_EMAIL }}"
+          git remote add origin "https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/${{ secrets.GITEE_USERNAME }}/${{ secrets.GITEE_REPO }}.git"
+          git add .
+          git commit -m "Deploy from GitHub Actions at $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push -f origin master
